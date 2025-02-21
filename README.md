@@ -138,6 +138,7 @@ document-verification/
 │   │   ├── App.js  # Main entry file
 │   ├── package.json  # Dependencies
 │   ├── public/
+|   ├── requirements.txt
 │── README.md  # Documentation
 ```
 
