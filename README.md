@@ -10,10 +10,15 @@ This project is a **Document Verification System** that allows users to:
 
 ## 📌 Features
 ✅ Upload document (PDF/Image) and extract text.
+
 ✅ Store extracted text in PostgreSQL.
+
 ✅ Automatically update status to "Completed" after extraction.
+
 ✅ Check document verification status by entering the document ID.
+
 ✅ **Results Dashboard is displayed on the same page only when the button is clicked.**
+
 ✅ **Extracted text is displayed immediately after uploading a document.**
 
 ---
