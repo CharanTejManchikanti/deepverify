@@ -1,0 +1,63 @@
+import React, { useState } from "react";
+import axios from "axios";
+
+const UploadDocument = () => {
+    const [file, setFile] = useState(null);
+    const [response, setResponse] = useState(null);
+
+    const handleUpload = async () => {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        const res = await axios.post("http://localhost:5000/upload-document", formData);
+        setResponse(res.data);
+    };
+
+    return (
+        <div>
+            <h2>Upload Document</h2>
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+            <button onClick={handleUpload}>Upload</button>
+
+            {response && (
+                <div>
+                    <h3>Extracted Text:</h3>
+                    <pre>{response.extracted_text}</pre>
+                    <p>Status: {response.status}</p>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default UploadDocument;
+
+
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+const UploadDocument = () => {
+    const [file, setFile] = useState(null);
+    const navigate = useNavigate();
+
+    const handleUpload = async () => {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        const res = await axios.post("http://localhost:5000/upload-document", formData);
+
+        // ✅ Navigate to the ExtractedText page with data
+        navigate("/extracted-text", { state: res.data });
+    };
+
+    return (
+        <div>
+            <h2>Upload Document</h2>
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+            <button onClick={handleUpload}>Upload</button>
+        </div>
+    );
+};
+
+export default UploadDocument;
