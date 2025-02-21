@@ -1,0 +1,21 @@
+# Backend Requirements
+Flask
+Flask-Cors
+Flask-SQLAlchemy
+psycopg2-binary
+Pillow
+pytesseract
+PyMuPDF
+Werkzeug
+requests
+python-dotenv
+opencv-python
+
+# Frontend Requirements
+Node.js
+npm
+react
+react-dom
+react-router-dom
+axios
+
